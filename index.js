@@ -75,6 +75,7 @@ function search(sheet, name, maxcol, next) {
 }
 
 server.get('/:name', function (req, res, next) {
+    res.charSet('utf-8');
     var GoogleSpreadsheet = require("google-spreadsheet");
     var doc = new GoogleSpreadsheet('1yEmwTHsymobz6_xRGC6d8ZRT6v7sO3Qhzgud5dzNHME');
 
