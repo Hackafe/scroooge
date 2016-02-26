@@ -29,7 +29,8 @@ function search(sheet, name, maxcol, next) {
         var found = false;
         cells.forEach(function (cell) {
             var member = cell.value.trim();
-            if (member != name) return;
+            if (member.toLowerCase() != name.toLowerCase()) return;
+            name = member;
 
             found = true;
             console.log('got', cell.value.trim(), 'at row', cell.row);
