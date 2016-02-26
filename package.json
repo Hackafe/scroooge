@@ -19,6 +19,6 @@
   "homepage": "https://github.com/Hackafe/scroooge#readme",
   "dependencies": {
     "google-spreadsheet": "^1.1.4",
-    "restify": "^4.0.4"
+    "restify": "https://github.com/groupsky/node-google-spreadsheet.git#patch-1"
   }
 }
