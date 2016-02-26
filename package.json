@@ -1,0 +1,24 @@
+{
+  "name": "scroooge",
+  "version": "1.0.0",
+  "description": "Did you paid your Hackafe membership?",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Hackafe/scroooge.git"
+  },
+  "author": "http://github.com/groupsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hackafe/scroooge/issues"
+  },
+  "homepage": "https://github.com/Hackafe/scroooge#readme",
+  "dependencies": {
+    "google-spreadsheet": "^1.1.4",
+    "restify": "^4.0.4"
+  }
+}
