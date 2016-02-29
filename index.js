@@ -103,7 +103,7 @@ server.get('/:name', function (req, res, next) {
             return next('missing sheets');
         }
 
-        search(sheet2016, req.params.name, new Date().getMonth() * 2 + 4, function (err, info) {
+        search(sheet2016, req.params.name, sheet2016.colCount, function (err, info) {
             if (err) {
                 return next(err);
             }
