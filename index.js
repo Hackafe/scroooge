@@ -74,6 +74,17 @@ function search(sheet, name, maxcol, next) {
 
 }
 
+server.get('/', function(req, res, next) {
+    var body = '<html><body><form onsubmit="location.assign(\'/\'+document.getElementById(\'name\').value);return false;"><input id="name" placeholder="Вашето име"><button type="submit">Провери</button></form></body></html>';
+    res.writeHead(200, {
+        'Content-Length': Buffer.byteLength(body),
+        'Content-Type': 'text/html'
+    });
+    res.write(body);
+    res.end();
+    return next();
+});
+
 server.get('/:name', function (req, res, next) {
     res.charSet('utf-8');
     var GoogleSpreadsheet = require("google-spreadsheet");
