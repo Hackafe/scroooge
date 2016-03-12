@@ -75,7 +75,7 @@ function search(sheet, name, maxcol, next) {
 }
 
 server.get('/', function(req, res, next) {
-    var body = '<html><body><form onsubmit="location.assign(\'/\'+document.getElementById(\'name\').value);return false;"><input id="name" placeholder="Вашето име"><button type="submit">Провери</button></form></body></html>';
+    var body = '<html><body><form onsubmit="location.assign(\'/\'+document.getElementById(\'name\').value);return false;"><input id="name" placeholder="Вашето име"><button type="submit">Провери</button></form><!-- alive --></body></html>';
     res.writeHead(200, {
         'Content-Length': Buffer.byteLength(body),
         'Content-Type': 'text/html'
