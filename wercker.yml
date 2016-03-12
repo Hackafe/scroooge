@@ -1,0 +1,31 @@
+box: node
+
+build:
+  steps:
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+
+    - npm-install
+    # disable tests for now because we don't have any
+    #- npm-test
+
+
+deploy:
+  steps:
+    - add-ssh-key:
+        keyname: DOKKU
+    - script:
+        name: Force add to known hosts due to custom port
+        code: |
+          ssh -p $SERVER_PORT -o StrictHostKeyChecking=no dokku@$SERVER_HOSTNAME apps
+    - script:
+        name: Add remote
+        code: |
+          git remote add wercker-dokku ssh://dokku@$SERVER_HOSTNAME:$SERVER_PORT/scroooge || true
+    - script:
+        name: Push to dokku
+        code: |
+          git push wercker-dokku $WERCKER_GIT_COMMIT:master -f
