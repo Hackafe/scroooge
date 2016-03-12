@@ -12,6 +12,7 @@ var server = restify.createServer({
 });
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
+server.use(restify.jsonp());
 server.use(restify.bodyParser());
 
 function search(sheet, name, maxcol, next) {
