@@ -28,7 +28,9 @@ function search(sheet, name, maxcol, next) {
 
         var found = false;
         cells.forEach(function (cell) {
-            var memberNames = cell.value.trim().toLowerCase().split(/[\r\n|]/);
+            var memberNames = cell.value.toLowerCase().split(/[\r\n|]/).forEach(function(name){
+                return name.trim();
+            });
             if (!~memberNames.indexOf(name.toLowerCase())) return;
             name = memberNames[0];
 
